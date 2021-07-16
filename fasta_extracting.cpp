@@ -21,7 +21,7 @@ int extract_fastas(std::string argv1, std::string argv2, std::string argv3, std:
 	std::string to_extract = argv3; // change this to some list
 	std::string out_file_name = argv4;
 	std::string criteria_extract = argv5;
-	std::cout << argv1 << std::endl;
+	std::cerr << argv1 << std::endl;
 	
 	//open files
 	std::ifstream fasta_file; 
@@ -30,7 +30,7 @@ int extract_fastas(std::string argv1, std::string argv2, std::string argv3, std:
 	dict_file.open(dict_path);
 	std::ofstream fastas_out;
 	fastas_out.open(out_file_name);
-	std::cout << "All files open!" << std::endl;
+	std::cerr << "All files open!" << std::endl;
 	std::string fasta_line;
 	if (to_extract != "x") {
 		std::ifstream extraction;

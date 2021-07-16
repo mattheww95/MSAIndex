@@ -98,7 +98,7 @@ std::vector<nucleotides> tabulate_fasta(std::ifstream& index_file) {
         nucleotides nucs_;
         nucs.push_back(nucs_); // call default constructor by adding parenthesis to the end of the struct
     }
-    std::cout << "Vector length " << nucs.size() << std::endl;
+    std::cerr << "Vector length " << nucs.size() << std::endl;
     return nucs;
 
 }
@@ -147,12 +147,12 @@ void get_fasta_single_line(std::ifstream& input, std::vector<nucleotides> nucs_,
     __uint64 increment = 0;
     __uint64 del_counter = 0; // this dosnt need to be uint64, but just incase one day....
     char ref_nuc;
-
+    std::cout << "Reference_num,Reference_nuc,Position,A,T,C,G,Other,N,Deletion\n";
     for (nucleotides cur_base: nucs_) {
         ref_nuc = ref[increment];
-        std::cout << del_counter << " " << ref_nuc << " " << increment;
-        std::cout << " A " << cur_base.A << " T " << cur_base.T << " C " << cur_base.C << " G " << cur_base.G << " Other " << cur_base.other;
-        std::cout << " N " << cur_base.N << " Deletion " << cur_base.del << "\n";
+        std::cout << del_counter << "," << ref_nuc << "," << increment;
+        std::cout << "," << cur_base.A << "," << cur_base.T << "," << cur_base.C << "," << cur_base.G << "," << cur_base.other;
+        std::cout << "," << cur_base.N << "," << cur_base.del << "\n";
         increment++;
         if (ref_nuc != '-') {
             del_counter++;

@@ -14,7 +14,7 @@ mainly to intake the command line options.
 typedef unsigned long long int __uint64;
 
 void print_help() {
-	std::cout << "Version 0.1.0" << std::endl;
+	std::cout << "Version 0.2.0" << std::endl;
 	std::cout << "Program execution branches are either Index or Extract." << std::endl;
 	std::cout << "E.g. MSA index creation MSAIndex Index -f fasta." << std::endl;
 	std::cout << "Index" << std::endl;
@@ -26,6 +26,7 @@ void print_help() {
 	std::cout << "-o Name of the file to write extracted fastas too." << std::endl;
 	std::cout << "-s String to search for in headers for extraction instead of a list (e.g. Canada)." << std::endl;
 	std::cout << "Tabulate" << std::endl;
+	std::cout << "Currently Reads to stdout" << std::endl;
 	std::cout << "-f Input path to fasta file, Index writes to stdout so make sure to capture output." << std::endl;
 	std::cout << "-i Input path to Index file." << std::endl;
 	std::cout << "-r Specify the header of single reference fasta to use as a mask." << std::endl;
@@ -123,7 +124,7 @@ int main(int argc, char *argv[]) {
 		std::vector<nucleotides> nucs = tabulate_fasta(index_i);
 		// pull out reference fasta
 		int get_ref = extract_fastas(fasta_file, index_file, "x", "reference_.fasta", reference_fasta);
-		std::cout << reference_fasta << std::endl;
+		std::cerr << reference_fasta << std::endl;
 		if (get_ref != 0) {
 			std::cerr << "Could not generate reference fasta of " << reference_fasta << std::endl;
 			return 0;
