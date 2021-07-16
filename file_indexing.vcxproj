@@ -79,13 +79,12 @@
     <ClCompile Include="create_index.cpp" />
     <ClCompile Include="fasta_extracting.cpp" />
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\PycharmProjects\Kyrylo_proj\b117_test.fasta" />
+    <ClCompile Include="tabulate_nucleotides.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="extract.h" />
     <ClInclude Include="index.h" />
+    <ClInclude Include="tabulate_nucleotides.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

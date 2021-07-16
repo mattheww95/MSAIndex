@@ -3,7 +3,6 @@
 #include <fstream>
 #include <string>
 #include <string.h>
-#include "extract.h"
 
 
 void find_fasta(std::ifstream& index_file, std::string for_extract, std::ifstream& fasta_, std::ofstream& out_file);

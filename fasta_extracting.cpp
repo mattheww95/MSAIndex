@@ -82,8 +82,8 @@ void find_fasta(std::ifstream &index_file, std::string for_extract, std::ifstrea
 		size_t test_ex = fasta_header.find(for_extract, 0);
 		if (test_ex != std::string::npos) { // search header for criteria slower... but easier
 			// write out that fastas
-			__uint64 start_index = std::stoll(begin_, nullptr, 10);
-			__uint64 end_pos = std::stoll (end, nullptr, 10);
+			__uint64 start_index = std::stoull(begin_, nullptr, 10);
+			__uint64 end_pos = std::stoull (end, nullptr, 10);
 			fasta_.seekg(start_index, std::ios::beg);
 			char* buffer = new char[end_pos]; // Create array size of the end postion
 			fasta_.read(buffer, end_pos); // read in that many characters
