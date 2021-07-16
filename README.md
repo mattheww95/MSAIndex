@@ -28,6 +28,11 @@ Extract
 	-p Input path to a file containing a single column of information to sample from.
 	-o Name of the file to write extracted fastas too.
 	-s String to search for in headers for extraction instead of a list (e.g. Canada).
+Tabulate
+	Currently Reads to stdout
+	-f Input path to fasta file, Index writes to stdout so make sure to capture output.
+	-i Input path to Index file.
+	-r Specify the header of single reference fasta to use as a mask.
 	
 	-h Display this message and exit.
 ```
