@@ -36,3 +36,4 @@ Tabulate
 	
 	-h Display this message and exit.
 ```
+TODO: Profile memory usage, change lookup of fastas in the index to use a Hash map instead of linear search
